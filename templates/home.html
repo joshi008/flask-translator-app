@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        .outter {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            width: 50%;
+            min-height: 300px;
+            background: #161a2b;
+            text-align: center;
+            margin: 2% auto;
+            border-radius: 10px;
+            padding-bottom: 32px;
+            padding-top: 1%;
+            transition: 1;
+            color: white;
+        }
+
+        body {
+            background-color: rgb(196, 132, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container outter">
+        <form action="/lang" method="POST">
+            <div>
+                <label for="message">Enter the message in any language: </label>
+                <input type="text" name="message" id="message">
+            </div>
+            <br>
+            <br>
+            <label for="language">Choose a language:</label>
+            <select name="language" id="language">
+                <option value="en">English</option>
+                <option value="ar">Arabic</option>
+                <option value="bn">Bengali</option>
+                <option value="zh-cn">Chinese (simplified)</option>
+                <option value="nl">Dutch</option>
+                <option value="eo">esperanto</option>
+                <option value="fr">french</option>
+                <option value="gu">gujarati</option>
+                <option value="hi">hindi</option>
+                <option value="ko">korean</option>
+                <option value="ml">malayalam</option>
+                <option value="mr">marathi</option>
+                <option value="pt">portuguese</option>
+                <option value="pa">punjabi</option>
+                <option value="ru">russian</option>
+                <option value="es">spanish</option>
+                <option value="ta">tamil</option>
+                <option value="te">telugu</option>
+                <option value="ur">urdu</option>
+                <option value="vi">vietnamese</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-success">Convert!</button>
+
+        </form>
+        <br>
+        <br>
+        <div>{% if output_message %}
+            <h3>Translated Message: {{output_message}}</h3>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
